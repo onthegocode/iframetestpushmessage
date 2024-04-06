@@ -10,9 +10,14 @@
 		<h1>Hello World!</h1>
 		<h1>Hello World!</h1>
 		<h1>Hello World!</h1>
+		<button>Click me</button>
 		<script>
 			let height = document.body.scrollHeight;
-			window.parent.postMessage( height,"*");
+			document.querySelector("button").addEventListener("click", ()=>{
+				
+			window.parent.postMessage( "hi","*");
+				console.log(height);
+			});
 		</script>
 	</body>
 </html>
