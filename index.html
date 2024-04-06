@@ -12,12 +12,7 @@
 		<h1>Hello World!</h1>
 		<script>
 			let height = document.body.scrollHeight;
-			window.parent.postMessage(
-				{
-					Scrollheight: height,
-				},
-				"*"
-			);
+			window.parent.postMessage( height,"*");
 		</script>
 	</body>
 </html>
