@@ -3,31 +3,25 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Embedded</title>
+		<title>Test Homepage</title>
 	</head>
 	<body>
-		<h1>Hello World!</h1>
-		<h1>Hello World!</h1>
-		<h1>Hello World!</h1>
-		<h1>Hello World!</h1>
-		<h1>Hello World!</h1>
-		<h1>Hello World!</h1>
-		<h1>Hello World!</h1>
-		<h1>Hello World!</h1>
-		<h1>Hello World!</h1>
-		<h1>Hello World!</h1>
-		<h1>Hello World!</h1>
-		<h1>Hello World!</h1>
-		<h1>Hello World!</h1>
-		<button>Click me</button>
-		<script>
-			let height = document.body.scrollHeight;
-			document.querySelector("button").addEventListener("click", () => {
-				window.parent.postMessage(
-					{ Scrollheight: height },
-					"http://127.0.0.1:5500/index2.html"
-				);
-			});
-		</script>
+		<iframe id="idIframe"
+			src="https://mvgc-test.veritas.financial/"
+			width="100%" onload="iframeLoaded()">
+		</iframe>
 	</body>
+	<script>
+		const iframeLoaded = () => {
+			const iframe = document.getElementById("idIframe");
+			
+			window.addEventListener("message", (e) => {
+			if (e.data.Scrollheight && "https://mvgc-test.veritas.financial/") {
+				console.log(e.data.Scrollheight);
+				iframe.height = e.data.Scrollheight + "px";
+			}
+			});
+		};
+		
+	</script>
 </html>
