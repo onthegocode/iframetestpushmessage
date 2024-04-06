@@ -8,16 +8,22 @@
 	<body>
 		<iframe id="idIframe"
 			src="https://mvgc-test.azurewebsites.net/"
+			onload="iframeLoaded()"
 			width="100%">
 		</iframe>
 	</body>
 	<script>
-		window.addEventListener("message", (e) => {
-			if (e.data.Scrollheight) {
-				console.log(e);
-				console.log(e.data.Scrollheight);
-			}
-		});
-		
+		const iframeLoaded = () => {
+			
+		const iframe = document.getElementById("idIframe");
+			
+			window.addEventListener("message", (e) => {
+				if (e.data.Scrollheight) {
+					console.log(e.data.Scrollheight);
+					iframe.height = e.data.Scrollheight + "px";
+				}
+			});
+			
+		}
 	</script>
 </html>
