@@ -16,7 +16,8 @@
 			const iframe = document.getElementById("idIframe");
 			
 			window.addEventListener("message", (e) => {
-			if (e.data.Scrollheight && "https://mvgc-test.veritas.financial/") {
+			if (e.data.Scrollheight) {
+				console.log(e);
 				console.log(e.data.Scrollheight);
 				iframe.height = e.data.Scrollheight + "px";
 			}
