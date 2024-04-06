@@ -10,15 +10,24 @@
 		<h1>Hello World!</h1>
 		<h1>Hello World!</h1>
 		<h1>Hello World!</h1>
+		<h1>Hello World!</h1>
+		<h1>Hello World!</h1>
+		<h1>Hello World!</h1>
+		<h1>Hello World!</h1>
+		<h1>Hello World!</h1>
+		<h1>Hello World!</h1>
+		<h1>Hello World!</h1>
+		<h1>Hello World!</h1>
+		<h1>Hello World!</h1>
 		<button>Click me</button>
 		<script>
 			let height = document.body.scrollHeight;
-			document.querySelector("button").addEventListener("click", ()=>{
-				
-			window.parent.postMessage( "hi","*");
-				console.log(height);
+			document.querySelector("button").addEventListener("click", () => {
+				window.parent.postMessage(
+					{ Scrollheight: height },
+					"http://127.0.0.1:5500/index2.html"
+				);
 			});
 		</script>
 	</body>
 </html>
- 
